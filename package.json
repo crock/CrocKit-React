@@ -1,0 +1,13 @@
+{
+    "name": "crockit-react",
+    "private": false,
+    "version": "1.0.0",
+    "dependencies": {
+        "react": "^17",
+        "react-dom": "^17"
+    },
+    "devDependencies": {
+        "@types/node": "^16",
+        "typescript": "^4"
+    }
+}
