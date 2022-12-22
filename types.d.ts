@@ -38,4 +38,6 @@ export interface PostCardProps {
     date: string
     excerpt: string
     permalink: string
+    categories?: string[]
+    tags?: string[]
 }
