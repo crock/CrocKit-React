@@ -14,7 +14,7 @@ const PostCard: React.FC<PostCardProps> = ({ title, author, date, permalink, exc
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="mt-2 px-1.5 py-0.5 rounded-full text-xs font-medium text-gray-700 bg-gray-100 hover:bg-gray-200"
+              className="mt-2 px-1.5 py-0.5 mr-1 rounded-full text-xs font-medium text-gray-700 bg-gray-100 hover:bg-gray-200"
             >
               #{tag}
             </span>
@@ -23,6 +23,17 @@ const PostCard: React.FC<PostCardProps> = ({ title, author, date, permalink, exc
       );
     }
     return null;
+  }
+
+  const ExcerptDisplay = () => {
+    const excerptText = excerpt
+      .replace(/<a.*?>(.*?)<\/a>/g, '$1')
+      .replace('Continue reading', '');
+
+
+    return (
+      <div className="font-light text-sm leading-8" dangerouslySetInnerHTML={{__html: excerptText}} />
+    )
   }
 
   return (
@@ -48,7 +59,7 @@ const PostCard: React.FC<PostCardProps> = ({ title, author, date, permalink, exc
           </span>
         </div>
       </div>
-      <div className="font-light text-sm leading-8" dangerouslySetInnerHTML={{__html: excerpt}} />
+      <ExcerptDisplay />
       <Link
         to={permalink}
         className="bg-primary-light hover:bg-primary text-white py-2 px-3 text-lg font-semibold uppercase rounded-sm mt-4"
