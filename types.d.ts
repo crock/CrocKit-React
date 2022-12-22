@@ -20,3 +20,22 @@ export interface AnalyticsProps {
         value?: any
     }
 }
+
+export interface PaginationProps {
+    pagination: {
+        currentPage: number
+        numPages: number
+        limit: number
+        skip: number
+        totalPosts: number
+    },
+    pathPrefix: string
+}
+
+export interface PostCardProps {
+    title: string
+    author: string
+    date: string
+    excerpt: string
+    permalink: string
+}
