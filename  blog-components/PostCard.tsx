@@ -28,8 +28,8 @@ const PostCard: React.FC<PostCardProps> = ({ title, author, date, permalink, exc
   const ExcerptDisplay = () => {
     const excerptText = excerpt
       .replace(/<a.*?>(.*?)<\/a>/g, '$1')
-      .replace('Continue reading', '');
-
+      .replace('Continue reading', '')
+      .replace(`"${title}"`, '...')
 
     return (
       <div className="font-light text-sm leading-8" dangerouslySetInnerHTML={{__html: excerptText}} />
